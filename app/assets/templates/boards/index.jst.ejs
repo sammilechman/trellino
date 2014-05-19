@@ -2,7 +2,7 @@
 
 <button class='refresh'>Refresh</button>
 
-<ul id="custom-boards">
+<ul id="custom-boards" id="sortable">
 	<% boards.each(function(board) { %>
 		<li>
 			<a href="#boards/<%= board.escape("id") %>">

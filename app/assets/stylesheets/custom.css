@@ -1,5 +1,3 @@
-/* Misc */
-
 .clearfix:after {
   content: ' ';
   visibility: hidden;
@@ -11,8 +9,6 @@
   display: none !important;
   visibility: hidden !important;
 }
-
-/* Boards Index Page */
 
 #custom-boards > li {
   list-style: none;

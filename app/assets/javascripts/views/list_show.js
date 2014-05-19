@@ -17,7 +17,20 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
     "click .list-delete-btn": "handleListDeletion",
     "click .card-create-btn": "addCardView",
     "click .new-card-create": "addCard",
-    "click .card-delete-btn": "removeCard"
+    "click .card-delete-btn": "removeCard",
+    "mousedown div.sortableObject": "sortableObject",
+  },
+
+  sortableObject: function(event) {
+    var $object = $(event.currentTarget.parentElement);
+    console.log($object);
+    $object.sortable({
+      axis: 'y',
+      update: function(event, ui) {
+        alert(ui.offset);
+      }
+
+    });
   },
 
   addCard: function (card) {
@@ -64,6 +77,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
       list: this.model
     });
     this.$el.html(renderedContent);
+
     this.attachSubviews();
 
     return this;

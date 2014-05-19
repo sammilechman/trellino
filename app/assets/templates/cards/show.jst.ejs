@@ -1,7 +1,13 @@
-<h4><%= card.escape("title") %></h4>
+<div class="sortableObject" id="<%= card.escape("rank") %>">
+  <div class="card-delete-btn">
+    <button class="btn btn-danger">Delete Card</button>
+  </div>
 
-<p>
-  <em>
-    <%= card.escape("description") %>
-  </em>
-</p>
+  <h4><%= card.escape("title") %></h4>
+
+  <p>
+    <em>
+      <%= card.escape("description") %>
+    </em>
+  </p>
+</div>
