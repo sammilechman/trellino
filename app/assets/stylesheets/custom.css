@@ -14,31 +14,31 @@
 
 /* Boards Index Page */
 
-#my-boards > li {
+#custom-boards > li {
   list-style: none;
 }
 
-#my-boards > li a {
-  width: 300px;
-  height: 100px;
-  background-color: #23719F;
+#custom-boards > li a {
+  width: 200px;
+  height: 200px;
+  background-color: #6CF878;
   float: left;
-  margin: 8px;
-  padding: 10px;
-  color: white;
-  font-size: 18px;
-  border-radius: 3px;
+  margin: 12px;
+  padding: 12px;
+  color: gray;
+  font-size: 20px;
+  border-radius: 0px;
   font-weight: bold;
 }
 
-#my-boards > li a:hover {
-  background-color: #1E628A;
+#custom-boards > li a:hover {
+  background-color: #F86CF6;
 }
 
 .list {
   margin: 10px 10px;
   float: left;
-  width: 250px;
+  width: 450px;
 }
 
 .card-create-btn {
@@ -57,7 +57,7 @@
 .card {
   margin: 8px 2px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px dotted #ddd;
 }
 
 .card-delete-btn {
@@ -65,5 +65,5 @@
 }
 
 #board-controls {
-  margin-top: 50px;
+  margin-top: 60px;
 }
