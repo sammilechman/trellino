@@ -1,0 +1,9 @@
+<h2>Templates:Boards:Index</h2>
+
+<button class='refresh'>Refresh</button>
+
+<ul>
+<% boards.each(function(board) { %>
+	<li><%= board.escape("title") %></li>
+<% }) %>
+</ul>

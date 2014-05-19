@@ -24,6 +24,7 @@ gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
 gem 'rake', '10.1.1'
 gem 'bcrypt'
+gem 'serialize_json-rails', '~> 0.0.1'
 
 group :development, :test do
   gem 'rspec-rails'
