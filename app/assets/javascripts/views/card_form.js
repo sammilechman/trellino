@@ -5,13 +5,16 @@ Trellino.Views.CardForm = Backbone.View.extend({
     this.list = options.list;
   },
 
+  //Currently an "enter" favors cancel over submit.
   events: {
     'submit #new-card-form': 'handleSubmit',
     'click #close-card-form': 'removeForm'
   },
 
   render: function () {
-    var renderedContent = this.template();
+    var renderedContent = this.template({
+      list: this.list
+    });
     this.$el.html(renderedContent);
     return this;
   },

@@ -1,4 +1,4 @@
-Trellino.Views.ListShowView = Backbone.CompositeView.extend({
+Trellino.Views.ListShow = Backbone.CompositeView.extend({
   template: JST["lists/show"],
   className: 'list',
 
@@ -15,7 +15,9 @@ Trellino.Views.ListShowView = Backbone.CompositeView.extend({
     "mouseenter": "showTrashButton",
     "mouseleave": "hideTrashButton",
     "click .list-delete-btn": "handleListDeletion",
-    "click .card-create-btn": "addCardView"
+    "click .card-create-btn": "addCardView",
+    "click .new-card-create": "addCard",
+    "click .card-delete-btn": "removeCard"
   },
 
   addCard: function (card) {

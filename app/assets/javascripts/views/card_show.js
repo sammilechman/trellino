@@ -12,6 +12,7 @@ Trellino.Views.CardsShowView = Backbone.View.extend({
   },
 
   render: function () {
+    console.log("rendering Card");
     var renderedContent = this.template({
       card: this.model
     });

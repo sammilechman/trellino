@@ -7,10 +7,10 @@ template: JST['boards/show'],
     this.listenTo(this.model.lists(), 'add', this.addList);
     this.listenTo(this.model.lists(), 'remove', this.removeList);
 
-    var newListView = new Trellino.Views.NewListsView({
+    var listNewView = new Trellino.Views.ListNew({
       board: this.model
     });
-    this.addSubview("#board-controls", newListView);
+    this.addSubview("#board-controls", listNewView);
 
 //     var addMemberView = new Trellino.Views.AddMemberView({
 //       model: this.model
@@ -25,10 +25,10 @@ template: JST['boards/show'],
   },
 
   addList: function (list) {
-    var listShow = new Trellino.Views.ListShowView({
+    var listShowView = new Trellino.Views.ListShow({
       model: list
     });
-    this.addSubview('#lists', listShow.render());
+    this.addSubview('#lists', listShowView.render());
   },
 
   removeList: function (list) {
@@ -47,7 +47,7 @@ template: JST['boards/show'],
     this.model.destroy();
     Backbone.history.navigate('', {trigger: true});
   },
-  
+
     render: function () {
     var renderedContent = this.template({
       board: this.model
