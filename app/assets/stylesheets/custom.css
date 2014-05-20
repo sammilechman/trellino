@@ -37,6 +37,11 @@
   width: 450px;
 }
 
+.card-well {
+  border-radius: 2px;
+  background-color: #CED5E0;
+}
+
 .card-create-btn {
   margin-top: 2px;
   color: white;
@@ -44,9 +49,10 @@
 }
 
 .list-delete-btn {
-  margin-top: 2px;
+  border-radius: 2px;
   float: right;
   color: white;
+  background-color: red;
   margin-right: 10px;
 }
 

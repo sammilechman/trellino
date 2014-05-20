@@ -12,22 +12,60 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   events: {
-    "mouseenter": "showTrashButton",
-    "mouseleave": "hideTrashButton",
+    "mouseenter #panel-heading-id": "showTrashButton",
+    "mouseleave #panel-heading-id": "hideTrashButton",
     "click .list-delete-btn": "handleListDeletion",
     "click .card-create-btn": "addCardView",
     "click .new-card-create": "addCard",
     "click .card-delete-btn": "removeCard",
-    "mousedown div.sortableObject": "sortableObject",
+    "mousedown .card-well": "sortableObject",
   },
 
   sortableObject: function(event) {
     var $object = $(event.currentTarget.parentElement);
-    console.log($object);
+
+    var s = $('#sortable')
+    var origIDs = [];
+
+    //origIDs is the rank numbers in order, before movement.
+    _(s.children()).each(function(x) {
+      origIDs.push(x.id.slice(5));
+      debugger
+    });
+
+    //Get objets associated with these ranks? They're not IDs
+    // var view = this;
+    // var origCards = [];
+    // _(origIDs).each(function(el) {
+    //   origCards.push(view.model.fetch(el))
+    //   debugger
+    // });
+
+    //Now for the actual movement
     $object.sortable({
       axis: 'y',
       update: function(event, ui) {
-        alert(ui.offset);
+        var s = $('#sortable')
+
+        var newData = [];
+        var unfilteredArray = s.sortable('toArray');
+        _(unfilteredArray).each(function(x) {
+          newData.push(x.slice(5));
+        });
+
+        //We now have origData and newData to setup new ranking.
+        var counter = 0;
+        _(s.children()).each(function(x) {
+          x.setAttribute("rank", newData[counter]);
+          debugger
+          x.save({}, {
+            success: function(){
+              console.log("SAVED");
+            }
+          });
+          counter++;
+        });
+
       }
 
     });
